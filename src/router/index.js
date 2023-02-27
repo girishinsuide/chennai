@@ -4,33 +4,41 @@ import HomeView from '../views/HomeView.vue'
 
 Vue.use(VueRouter)
 
-const routes = [
-  {
-    path: '/',
-    name: 'home',
-    component: HomeView
-  },
-  {
-    path: '/about',
-    name: 'about',
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-  },
-  {
-    path: '/lostfound',
-    name: 'lostfound',
-    component: () => import('../views/services/LostFound.vue')
-  },
-  {
-    path: '/flightinformation',
-    name: 'flightinformation',
-    component: () => import('../views/flights/FlightInformation.vue')
-  }
+const routes = [{
+        path: '/',
+        name: 'home',
+        component: HomeView
+    },
+    {
+        path: '/about',
+        name: 'about',
+        component: () =>
+            import ( /* webpackChunkName: "about" */ '../views/AboutView.vue')
+    },
+    {
+        path: '/lostfound',
+        name: 'lostfound',
+        component: () =>
+            import ('../views/services/LostFound.vue')
+    },
+    {
+        path: '/flightinformation',
+        name: 'flightinformation',
+        component: () =>
+            import ('../views/flights/FlightInformation.vue')
+    },
+    {
+        path: '/DutyFree',
+        name: 'dutyfree',
+        component: () =>
+            import ('../views/attheairport/DutyFree.vue')
+    }
 ]
 
 const router = new VueRouter({
-  mode: 'history',
-  base: process.env.BASE_URL,
-  routes
+    mode: 'history',
+    base: process.env.BASE_URL,
+    routes
 })
 
 export default router
