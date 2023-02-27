@@ -346,6 +346,73 @@
 <!-- Bestsellers Slider End -->
 
 
+<v-row>
+ 
+  <v-col cols="12" md="12">  
+    
+     <v-carousel :show-arrows="false"> 
+        <template v-for="(item, index) in slider"> 
+          <v-carousel-item  v-if="(index + 1) % columns === 1 || columns === 1" 
+                           :key="index"
+          > 
+            <v-row class="flex-nowrap" style="height:216px"> 
+              <template v-for="(n,i) in columns"> 
+                <template v-if="(+index + i) < slider.length"> 
+                  <v-col :key="i"> 
+                    <v-sheet v-if="(+index + i) < slider.length" 
+                             :color="slider[+index + i]"
+                             height="216px"
+                    >
+                      <v-row class="fill-height"
+                             align="center"
+                             justify="center"
+                      >
+                        <div class="display-3">
+    <v-img
+       src="../../views/attheairport/images/bestslider1.png"
+      class=""
+    ></v-img>
+
+                        </div>
+
+                    
+                      </v-row>
+
+                      <v-row class="fill-height"
+                             align="left"
+                           
+                      >
+                        <div class="BestsellersSlider-txt ml-5" style="border:1px solid">
+       
+    <v-row>
+ 
+   <v-col cols="8" md="8"> 
+      <p>Bvlgari Aqva Pour Homme </p>
+         <span>Marine EDP 100ML</span>
+         
+   </v-col>
+
+  <v-col cols="4" md="4">
+    <div  class="amtBox">₹ 7,250</div> 
+    
+    </v-col>
+  
+  </v-row>
+   
+      </div>
+                      </v-row>
+                    </v-sheet>
+                  </v-col> 
+                </template> 
+              </template> 
+            </v-row> 
+          </v-carousel-item> 
+        </template> 
+      </v-carousel>  
+    
+    
+    </v-col></v-row>
+
 
 <!-- New Arrival Slider Start -->
         <v-row>
@@ -529,6 +596,63 @@ export default {
       return{
         BestsellersSlider: '',
         NewArrivalSlider:'',
+         slider: [
+        "red", 
+        "green", 
+        "orange", 
+        "blue", 
+        "pink", 
+        "purple", 
+        "indigo", 
+        "cyan", 
+        "deep-purple", 
+        "light-green", 
+        "deep-orange", 
+        "blue-grey"
+      ],
+
+       slides: [
+      {
+        title: 'TERRA PC-BUSINESS 5050S',
+          image: 'https://www.wortmann.de/content/files/images/ProductImages/medium/item100955910000.jpg',
+        price: 559
+      },
+      {
+        title: 'TERRA PC-BUSINESS 5000',
+        image: 'https://www.wortmann.de/content/files/images/ProductImages/medium/item100956890000.jpg',
+        price: 609
+      },
+      {
+        title: 'TERRA PC-Micro 6000SE SILENT GREENLINE ',
+        image: 'https://www.wortmann.de/content/files/images/ProductImages/medium/item100955650000.jpg',
+        price: 689
+      },
+      {
+        title: 'HP ENVY 5030 multifunction printer',
+        image: 'https://images-na.ssl-images-amazon.com/images/I/81DzbjMdK8L._AC_SX569_.jpg',
+        price: 66
+      },
+      {
+        title: 'TERRA PC-BUSINESS 5050S',
+        image: 'https://www.wortmann.de/content/files/images/ProductImages/medium/item100955910000.jpg',
+        price: 559
+      },
+      {
+        title: 'TERRA PC-BUSINESS 5000',
+        image: 'https://www.wortmann.de/content/files/images/ProductImages/medium/item100956890000.jpg',
+        price: 609
+      },
+      {
+        title: 'TERRA PC-Micro 6000SE SILENT GREENLINE ',
+        image: 'https://www.wortmann.de/content/files/images/ProductImages/medium/item100955650000.jpg',
+        price: 689
+      },
+      {
+        title: 'HP ENVY 5030 multifunction printer',
+        image: 'https://images-na.ssl-images-amazon.com/images/I/81DzbjMdK8L._AC_SX569_.jpg',
+        price: 66
+      }
+    ]
       }
         
     },
@@ -538,6 +662,24 @@ export default {
         else return 'green'
       },
     },
+
+    computed: {
+    columns() {
+      if (this.$vuetify.breakpoint.xl) {
+        return 4;
+      }
+
+      if (this.$vuetify.breakpoint.lg) {
+        return 3;
+      }
+
+      if (this.$vuetify.breakpoint.md) {
+        return 2;
+      }
+
+      return 1;
+    }
+  },
 }
 </script>
 
