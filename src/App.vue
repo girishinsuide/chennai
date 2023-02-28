@@ -29,6 +29,7 @@ export default {
 </script>
 
 <style type="text/css">
+button{text-transform: unset !important;}
 .page-title{color: #1B63F8; font-size: 16px;}
 .myslider .v-carousel__controls{bottom:10% !important;}
 .mytabs .v-item-group{margin-bottom: 30px;}
@@ -64,4 +65,31 @@ export default {
     display:none !important;
 }
 .theme--light.v-list-item:focus::before{opacity: 0}
+.mytable .v-data-table__wrapper table tbody tr{ background-color:#fff; }
+.mytable .v-data-table__wrapper table {border-collapse: separate; border-spacing: 0 20px !important;}
+.mytable .v-data-table__wrapper table tbody td:first-child { border-left: 2px solid #E5E7EB !important;
+  border-right: 0 !important;
+  border-top: 2px solid #E5E7EB !important;
+  border-bottom: 2px solid #E5E7EB !important;
+  border-radius: 10px 0 0 10px; padding:10px;
+}
+.mytable .v-data-table__wrapper table tbody td:last-child{
+  border-left: 0 solid #E5E7EB !important;
+  border-right: 2px solid #E5E7EB  !important;
+  border-top: 2px solid #E5E7EB !important;
+  border-bottom: 2px solid #E5E7EB !important;
+  border-radius: 0 10px 10px 0; padding:10px;
+}
+.mytable .v-data-table__wrapper table tbody td{border-bottom: 2px solid #E5E7EB !important; border-top: 2px solid #E5E7EB !important;}
+.mytable th.text-start.sortable{border-bottom: 0 !important;}
+/*TAB STYLE STARTS*/
+.mytabs a.v-tab{background-color: #E8EFFE; padding:30px; position:relative;}
+.mytabs a.v-tab:first-child {background-color: red !important}
+.mytabs .v-tabs-bar{height: auto}
+.mytabs .v-tabs-slider-wrapper{height: 65% !important; top: 16%; opacity: 0.3}
+a.border-radiusbefore.v-tab{}
+a.border-radiusbefore.v-tab{ border-radius:20px  0 0 20px}
+a.border-radiusafter.v-tab{ border-radius:0px  20px  20px 0px}
+/*TAB STYLE ENDS*/
+
 </style>

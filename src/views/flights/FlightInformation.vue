@@ -2,126 +2,150 @@
     <div class="">
         <v-card class="mx-auto mt-n3">
             <v-img :src="require('../../views/services/images/lostnfound.jpg')" class="my-3" contain />
-            <v-card-title class="justify-center text-uppercase page-title" color="red">
-                Flight Informagtion
+            <v-card-title class="justify-center text-uppercase page-title">
+                Flight Information
             </v-card-title>
         </v-card>
         <v-tabs background-color=" accent-4" centered class="mytabs">
-            <v-tab href="#tab1">
+            <v-tab href="#tab1" class="border-radiusbefore">
                 To & From the Airport
             </v-tab>
             <v-tab-item value="tab1">
                 <v-container>
-                    <v-card>
-                       <!--  <template v-slot:item.status="{ item }">
-                                <v-chip :color="getColor(item.status)" dark>
-                                    {{ item.statu }}
-                                </v-chip>
-                            </template> -->
-                        <v-simple-table fixed-header height="400px">
-                            <template v-slot:default>
-                                <thead>
-                                    <tr>
-                                        <th class="text-left subtitle-2">
-                                            Airline
-                                        </th>
-                                        <th class="text-left  subtitle-2">
-                                            Flight
-                                        </th>
-                                        <th class="text-left subtitle-2">
-                                            Origin
-                                        </th>
-                                        <th class="text-left subtitle-2">
-                                            Scheduled
-                                        </th>
-                                        <th class="text-left subtitle-2">
-                                            Estimated
-                                        </th>
-                                        <th class="text-left subtitle-2">
-                                            Status
-                                        </th>
-                                        <th class="text-left subtitle-2">
-                                            Terminal
-                                        </th>
-                                        <th class="text-left subtitle-2">
-                                            Baggage
-                                        </th>
-                                        <th class="text-left subtitle-2">
-                                            Track
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr v-for="item in flightlist" :key="item.name">
-                                        <td><img :src="item.img" class="mt-1" width="50"></td>
-                                        <td><span class="font-weight-black">{{ item.name }}</span><br><span class="productspan grey--text">{{item.flight}}</span></td>
-                                        <td><span class="font-weight-black">{{item.origin}}</span></td>
-                                        <td><span class="font-weight-black">{{ item.scheduled }}</span></td>
-                                        <td><span class="font-weight-black">{{item.estimated}}</span></td>
-                                        <td><span class="green--text"><v-chip :color="getColor(item.status)" dark>{{item.status}}</v-chip></span></td>
-                                       
-                                        <td><span class="font-weight-black">{{item.terminal}}</span></td>
-                                        <td><span class="font-weight-black">{{item.baggage}}</span></td>
-                                        <td><span class="font-weight-black">
-                                                <v-btn class="mx-2" small fab dark color="indigo">
-                                                    <v-icon dark>
-                                                        mdi-plus
-                                                    </v-icon>
-                                                </v-btn>
-                                            </span></td>
-                                        <td>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </template>                            
-                        </v-simple-table>
-                    </v-card>
-                    <div class="rounded-xl mb-10" style="width: 100%; margin: 10px auto;  background-color: #fff; box-shadow: 0px 20px 25px -5px rgba(16, 24, 40, 0.06), 0px 8px 10px -6px rgba(16, 24, 40, 0.06); border: 2px solid #F3F4F6;">
-                        <v-list-item two-line>
-                            <v-list-item-content>
-                                <v-list-item-title class="text-h5 pt-2 pl-10 ">
-                                    Find your Flight
-                                </v-list-item-title>
-                            </v-list-item-content>
-                        </v-list-item>
+                   <div class="rounded-xl" style="width: 100%; padding:10px; margin: 35px auto;  background-color: #fff; box-shadow: 0px 20px 25px -5px rgba(16, 24, 40, 0.06), 0px 8px 10px -6px rgba(16, 24, 40, 0.06); border: 2px solid #F3F4F6;">
+                    <v-toolbar flat>
+                        <v-text-field v-model="search" prepend-icon="mdi-magnify" label="Search by City / Flight no." single-line hide-details></v-text-field>
+                        <v-divider class="mx-4" inset vertical></v-divider>
                         <v-spacer></v-spacer>
-                        <v-list-item>
-                            <v-list-item-content>
-                                <div class="">
-                                    <v-text-field class="mt-0 pt-2" label="Sby City / Flight no.earch" hide-details prepend-icon="mdi-magnify" two-line></v-text-field>
-                                </div>
-                                <!-- <v-list-item-subtitle>by City / Flight no.</v-list-item-subtitle> -->
-                            </v-list-item-content>
-                        </v-list-item>
-                        <v-list-item two-line>
-                            <v-list-item-content>
-                                <div class="text-overline">
-                                    <v-select class="mt-0 pt-2" label="Arrivals or Departures" hide-details two-line :items="['Arrivals', 'Departures']">
-                                        <template v-slot:item="{ item, attrs, on }">
-                                            <v-list-item v-bind="attrs" v-on="on">
-                                                <v-list-item-title :id="attrs['aria-labelledby']" v-text="item"></v-list-item-title>
-                                            </v-list-item>
-                                        </template>
-                                    </v-select>
-                                </div>
-                                <!-- <v-list-item-subtitle>or Departures</v-list-item-subtitle> -->
-                            </v-list-item-content>
-                        </v-list-item>
-                        <v-list-item two-line>
-                            <v-list-item-content>
-                                <v-btn rounded dark large class="gradient-button">
-                                    Search
+                        <v-select  :items="allflights" prepend-icon="mdi-airplane" hide-details label="All Flights" flat></v-select>
+                        <v-divider class="mx-4" inset vertical></v-divider>
+                        <v-select :items="allterminals" prepend-icon="mdi-airport" hide-details label="All Terminals" flat></v-select>
+                        <v-spacer></v-spacer>
+                        <v-dialog transition="dialog-bottom-transition" max-width="600">
+                            <template v-slot:activator="{ on, attrs }">
+                                <v-btn rounded large color="#E8EFFE" v-bind="attrs" v-on="on">
+                                    Filters
                                 </v-btn>
-                            </v-list-item-content>
-                        </v-list-item>
-                    </div>
+                            </template>
+                            <template v-slot:default="dialog">
+                                <v-card class="rounded-xl">
+                                    <v-card-title>
+                                        <span class="text-h5">Sort & Filter</span>
+                                    </v-card-title>
+                                    <v-card-text>
+                                        <v-radio-group column>
+                                            <v-radio label="Bahamas, The" value="bahamas"></v-radio>
+                                            <v-radio label="Bahrain" value="bahrain"></v-radio>
+                                            <v-radio label="Bangladesh" value="bangladesh"></v-radio>
+                                            <v-radio label="Barbados" value="barbados"></v-radio>
+                                        </v-radio-group>
+                                    </v-card-text>
+                                    <v-card-actions class="justify-end">
+                                        <v-btn text @click="dialog.value = false">
+                                            Reset Filters > </v-btn>
+                                        <v-btn rounded dark large class="gradient-button pl-10 pr-10" @click="dialog.value = false">
+                                            Apply
+                                        </v-btn>
+                                    </v-card-actions>
+                                </v-card>
+                            </template>
+                        </v-dialog>
+                        <v-spacer></v-spacer>
+                        <v-btn rounded dark large class="gradient-button">
+                            See All Flights
+                        </v-btn>
+                    </v-toolbar>
+                </div>
+                <v-data-table :headers="headers" :items="flightlist" :search="search" class="mytable">
+                    <template v-slot:[`item.img`]="{ item }">
+                        <img :src="item.img" class="mt-1" width="50" />
+                    </template>
+                    <template v-slot:[`item.status`]="{ item }">
+                        <v-chip :color="getColor(item.status)" dark>
+                            {{ item.status }}
+                        </v-chip>
+                    </template>
+                    <template v-slot:[`item.track`]="{ item }">
+                        <router-link to="/trackflights">
+                        <v-btn class="mx-2" small fab dark color="indigo">
+                            <v-icon dark>
+                                mdi-plus {{ item.track }}
+                            </v-icon>
+                        </v-btn>
+                    </router-link>
+                    </template>
+                </v-data-table>
                 </v-container>
             </v-tab-item>
-            <v-tab href="#tab2">
+            <v-tab href="#tab2" class="border-radiusafter">
                 Before You Fly
             </v-tab>
             <v-tab-item value="tab2">
-                tab2
+                <v-container>
+                   <div class="rounded-xl" style="width: 100%; padding:10px; margin: 35px auto;  background-color: #fff; box-shadow: 0px 20px 25px -5px rgba(16, 24, 40, 0.06), 0px 8px 10px -6px rgba(16, 24, 40, 0.06); border: 2px solid #F3F4F6;">
+                    <v-toolbar flat>
+                        <v-text-field v-model="search" prepend-icon="mdi-magnify" label="Search by City / Flight no." single-line hide-details></v-text-field>
+                        <v-divider class="mx-4" inset vertical></v-divider>
+                        <v-spacer></v-spacer>
+                        <v-select  :items="allflights" prepend-icon="mdi-airplane" hide-details label="All Flights" flat></v-select>
+                        <v-divider class="mx-4" inset vertical></v-divider>
+                        <v-select :items="allterminals" prepend-icon="mdi-airport" hide-details label="All Terminals" flat></v-select>
+                        <v-spacer></v-spacer>
+                        <v-dialog transition="dialog-bottom-transition" max-width="600">
+                            <template v-slot:activator="{ on, attrs }">
+                                <v-btn rounded large color="#E8EFFE" v-bind="attrs" v-on="on">
+                                    Filters
+                                </v-btn>
+                            </template>
+                            <template v-slot:default="dialog">
+                                <v-card class="rounded-xl">
+                                    <v-card-title>
+                                        <span class="text-h5">Sort & Filter</span>
+                                    </v-card-title>
+                                    <v-card-text>
+                                        <v-radio-group column>
+                                            <v-radio label="Bahamas, The" value="bahamas"></v-radio>
+                                            <v-radio label="Bahrain" value="bahrain"></v-radio>
+                                            <v-radio label="Bangladesh" value="bangladesh"></v-radio>
+                                            <v-radio label="Barbados" value="barbados"></v-radio>
+                                        </v-radio-group>
+                                    </v-card-text>
+                                    <v-card-actions class="justify-end">
+                                        <v-btn text @click="dialog.value = false">
+                                            Reset Filters > </v-btn>
+                                        <v-btn rounded dark large class="gradient-button pl-10 pr-10" @click="dialog.value = false">
+                                            Apply
+                                        </v-btn>
+                                    </v-card-actions>
+                                </v-card>
+                            </template>
+                        </v-dialog>
+                        <v-spacer></v-spacer>
+                        <v-btn rounded dark large class="gradient-button">
+                            See All Flights
+                        </v-btn>
+                    </v-toolbar>
+                </div>
+                <v-data-table :headers="headers" :items="flightlist" :search="search" class="mytable">
+                    <template v-slot:[`item.img`]="{ item }">
+                        <img :src="item.img" class="mt-1" width="50" />
+                    </template>
+                    <template v-slot:[`item.status`]="{ item }">
+                        <v-chip :color="getColor(item.status)" dark>
+                            {{ item.status }}
+                        </v-chip>
+                    </template>
+                    <template v-slot:[`item.track`]="{ item }">
+                        <router-link to="/trackflights">
+                        <v-btn class="mx-2" small fab dark color="indigo"  to="/trackflights">
+                            <v-icon dark>
+                                mdi-plus {{ item.track }}
+                            </v-icon>
+                        </v-btn>
+                    </router-link>
+                    </template>
+                </v-data-table>
+                </v-container>
             </v-tab-item>
         </v-tabs>
     </div>
@@ -138,13 +162,15 @@ export default {
     data() {
         return {
             search: '',
+            filter: {},
             headers: [{
-                    text: 'Dessert (100g serving)',
+                    text: 'Airline',
                     align: 'start',
                     filterable: false,
-                    value: 'name',
+                    value: 'img',
+                    sortBy: 'flight',
                 },
-                { text: 'Airline', value: 'img' },
+                { text: 'Dessert (100g serving)', value: 'name' },
                 { text: 'Flight', value: 'flight' },
                 { text: 'Origin', value: 'origin' },
                 { text: 'Scheduled', value: 'scheduled' },
@@ -152,8 +178,18 @@ export default {
                 { text: 'Status', value: 'status' },
                 { text: 'Terminal', value: 'terminal' },
                 { text: 'Baggage', value: 'baggage' },
-                { text: 'Track', value: 'track' },
+                { text: 'Track', value: 'track', sortable: false },
             ],
+            allflights: [
+          {text: "All"},
+          {text: "Indigo"},
+          {text: "Emirates"},
+        ],
+         allterminals: [
+          {text: "All"},
+          {text: "1"},
+          {text: "2"},
+        ],
             flightlist: [{
                     img: require("@/assets/images/flights/flightimg.svg"),
                     name: 'Indigo',
@@ -164,19 +200,17 @@ export default {
                     status: 'Arrived',
                     terminal: 'T1',
                     baggage: 'Belt 3',
-                    track: 'Track',
                 },
                 {
                     img: require("@/assets/images/flights/emirates.svg"),
                     name: 'Emirates',
-                    flight: '6E 5284',
+                    flight: '6EK 568',
                     origin: 'Dubai',
                     scheduled: '14:10',
                     estimated: '14:23',
                     status: 'On Time',
                     terminal: 'T1',
                     baggage: 'Belt 3',
-                    track: 'Track',
                 },
                 {
                     img: require("@/assets/images/flights/flightimg.svg"),
@@ -188,7 +222,6 @@ export default {
                     status: 'Delayed',
                     terminal: 'T1',
                     baggage: 'Belt 3',
-                    track: 'Track',
                 },
 
 
@@ -197,10 +230,10 @@ export default {
         }
     },
     methods: {
-      getColor (status) {
-        if (status == "Delayed") return 'red'
-        else return 'green'
-      },
+        getColor(status) {
+            if (status == "Delayed") return 'red'
+            else return 'green'
+        },
     },
 }
 </script>

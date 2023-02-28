@@ -59,7 +59,7 @@
                 </h2>
             </v-card-text>
             <v-tabs background-color=" accent-4" centered class="mytabs">
-                <v-tab href="#tab1">
+                <v-tab href="#tab1" class="border-radiusbefore">
                     To & From the Airport
                 </v-tab>
                 <v-tab-item value="tab1">
@@ -271,7 +271,7 @@
                         </v-col>
                     </v-row>
                 </v-tab-item>
-                <v-tab href="#tab3">
+                <v-tab href="#tab3" class="border-radiusafter">
                     At the Airport
                 </v-tab>
                 <v-tab-item value="tab3">

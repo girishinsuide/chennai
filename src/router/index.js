@@ -24,6 +24,11 @@ const routes = [
     path: '/flightinformation',
     name: 'flightinformation',
     component: () => import('../views/flights/FlightInformation.vue')
+  },
+  {
+    path: '/trackflights',
+    name: 'trackFlights',
+    component: () => import('../views/flights/trackflights.vue')
   }
 ]
 

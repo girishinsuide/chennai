@@ -2,7 +2,7 @@
     <div class="">
         <v-card class="mx-auto mt-n3">
             <v-img :src="require('../../views/services/images/lostnfound.jpg')" class="my-3" contain />
-            <v-card-title class="justify-center page-title">
+            <v-card-title class="justify-center text-uppercase page-title">
                 Services
             </v-card-title>
             <v-card-subtitle class="text-center">
