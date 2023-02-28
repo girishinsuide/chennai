@@ -4,6 +4,7 @@ import HomeView from '../views/HomeView.vue'
 
 Vue.use(VueRouter)
 
+
 const routes = [
   {
     path: '/',
@@ -29,13 +30,20 @@ const routes = [
     path: '/trackflights',
     name: 'trackFlights',
     component: () => import('../views/flights/trackflights.vue')
-  }
+  },
+  {
+        path: '/DutyFree',
+        name: 'dutyfree',
+        component: () =>
+            import ('../views/attheairport/DutyFree.vue')
+    },
+
 ]
 
 const router = new VueRouter({
-  mode: 'history',
-  base: process.env.BASE_URL,
-  routes
+    mode: 'history',
+    base: process.env.BASE_URL,
+    routes
 })
 
 export default router

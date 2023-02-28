@@ -116,8 +116,24 @@
                                 <v-list-item>
                                     <v-list-item-title>To & From Airport</v-list-item-title>
                                 </v-list-item>
+                               
                                 <v-list-item>
-                                    <v-list-item-title>At The Airport</v-list-item-title>
+                                    <v-menu top :offset-x="offset" >
+                                        <template v-slot:activator="{ on, attrs }">
+                                            <v-list-item-title v-bind="attrs" v-on="on">At The Airport</v-list-item-title>
+                                        </template>
+                                        <v-list>
+                                            <v-list-item>
+                                                <v-list-item-title>Duty Free</v-list-item-title>
+                                            </v-list-item>
+                                            <v-list-item>
+                                                <v-list-item-title>menu1</v-list-item-title>
+                                            </v-list-item>
+                                            <v-list-item>
+                                                <v-list-item-title>menu1</v-list-item-title>
+                                            </v-list-item>
+                                        </v-list>
+                                    </v-menu>
                                 </v-list-item>
                                 <v-list-item>
                                     <v-menu top :offset-x="offset">
