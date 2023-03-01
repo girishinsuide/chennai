@@ -31,13 +31,39 @@
                         </v-list>
                     </v-col>
                     <v-col cols="8">
-                        <v-slider append-icon="mdi-record-circle-outline" prepend-icon="mdi-record-circle-outline" v-model="sliderValue" thumb-color="primary" thumb-label="always"  hide-details>
+                        <v-slider append-icon="mdi-record-circle-outline" prepend-icon="mdi-record-circle-outline" v-model="sliderValue" thumb-color="primary" thumb-label="always" thumb-size="50"  hide-details class="my-slider">
+                            <!-- <template v-slot:thumb-label>
+                                
+                                <v-list>
+                            <v-list-item>
+                                <v-list-item-avatar class="">
+                                    <v-icon dark>mdi-airplane-takeoff</v-icon>
+                                </v-list-item-avatar>
+                                <v-list-item-content>
+                                    <v-list-item-title class=""> Scheduled</v-list-item-title>
+                                    <v-list-item-subtitle>14:10</v-list-item-subtitle>
+                                </v-list-item-content>
+                            </v-list-item>
+                        </v-list>
+                            </template> -->
                             <template v-slot:thumb-label>
-                                <v-icon dark>mdi-airplane-takeoff</v-icon>
-                            </template>
+          
+                                <v-list>
+                            <v-list-item dark>
+                                <v-list-item-avatar class="">
+                                    <v-icon dark>mdi-airplane-takeoff</v-icon>
+                                </v-list-item-avatar>
+                                <v-list-item-content>
+                                    <v-list-item-title class=""> Scheduled</v-list-item-title>
+                                    <v-list-item-subtitle>14:10</v-list-item-subtitle>
+                                </v-list-item-content>
+                            </v-list-item>
+                        </v-list>
+        </template>
                         </v-slider>
                     </v-col>
                     <v-col cols="2">
+
                         <v-list>
                             <v-list-item>
                                 <v-list-item-content>
@@ -114,10 +140,12 @@
                     <v-col>
                         <v-card flat>
                             <v-card-actions>
+                                <router-link to="/flightinformation">
                                 <v-btn depressed rounded large color="#E8EFFE" class="pl-4 pr-4">
                                     <v-icon left>mdi-airplane</v-icon>
                                     Back to Flights
                                 </v-btn>
+                            </router-link>
                                 <v-spacer></v-spacer>
                                 <v-btn depressed rounded dark large class="gradient-button pl-10 pr-10">
                                     <v-icon left>mdi-plus</v-icon>
@@ -334,7 +362,7 @@ export default {
 
     },
     data: () => ({
-        sliderValue: 0,
+        sliderValue: 50,
 }),
 
 }
@@ -361,4 +389,7 @@ export default {
     opacity: 1;
     transform: translateY(0px);
 }
+.my-slider .theme--light.v-list{background:none;}
+.my-slider .v-slider--horizontal .v-slider__thumb-label > *{transform:none;}
+.my-slider .v-slider--horizontal .v-slider__thumb-label{transform:none !important; border-radius:10px; width:auto !important;  bottom:8px; left: -65px;}
 </style>
