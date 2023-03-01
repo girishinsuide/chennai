@@ -32,6 +32,12 @@ const routes = [{
         name: 'dutyfree',
         component: () =>
             import ('../views/attheairport/DutyFree.vue')
+    },
+    {
+        path: '/FoodandDrink',
+        name: 'foodanddrink',
+        component: () =>
+            import ('../views/attheairport/FoodandDrink.vue')
     }
 ]
 

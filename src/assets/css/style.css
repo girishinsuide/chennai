@@ -189,24 +189,29 @@ body,
     font-family: 'Satoshi-Regular' !important;
 }
 
-.dutyfreecarousel.v-carousel .v-carousel__controls {
+.dutyfreecarousel.v-carousel .v-carousel__controls,
+.foodanddrinkcarousel.v-carousel .v-carousel__controls {
     justify-content: left !important;
     background: none !important;
 }
 
-.dutyfreecarousel.v-carousel .theme--dark.v-btn.v-btn--icon {
+.dutyfreecarousel.v-carousel .theme--dark.v-btn.v-btn--icon,
+.foodanddrinkcarousel.v-carousel .theme--dark.v-btn.v-btn--icon {
     color: #000 !important;
 }
 
-.v-btn--icon.v-size--small {
+.dutyfreecarousel.v-carousel .v-btn--icon.v-size--small,
+.foodanddrinkcarousel.dutyfreecarousel.v-carousel .v-btn--icon.v-size--small {
     height: 10px;
     width: 10px;
 }
 
-.v-carousel__controls__item {
+.dutyfreecarousel.v-carousel .v-carousel__controls__item,
+.foodanddrinkcarousel.v-carousel .v-carousel__controls__item {
     margin: 0 5px;
 }
 
-.v-carousel__controls__item .v-icon {
+.dutyfreecarousel.v-carousel .v-carousel__controls__item .v-icon,
+.foodanddrinkcarousel.v-carousel .v-carousel__controls__item .v-icon {
     opacity: 0.5;
 }

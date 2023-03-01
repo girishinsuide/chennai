@@ -509,10 +509,7 @@ color: #374151;}
 font-weight: 700;
 font-size: 16px;
 line-height: 24px !important;
-/* identical to box height, or 150% */
-
 text-align: center;
-
 color: #FFFFFF !important;}
 
 .bestseller h2, .newarrival h2{font-style: normal;
