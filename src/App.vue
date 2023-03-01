@@ -92,4 +92,28 @@ a.border-radiusbefore.v-tab{ border-radius:20px  0 0 20px}
 a.border-radiusafter.v-tab{ border-radius:0px  20px  20px 0px}
 /*TAB STYLE ENDS*/
 
+/*image over effect START*/
+.imgover .v-image__image {
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+    transition: 1s ease;
+}
+
+.imgleave .v-image__image {
+    transition: 1s ease;
+}
+
+.before-enter {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: all 2s ease-out;
+}
+
+.enter {
+    opacity: 1;
+    transform: translateY(0px);
+}
+/*image over effect END*/
+
 </style>

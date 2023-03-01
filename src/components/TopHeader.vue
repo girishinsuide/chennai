@@ -124,7 +124,9 @@
                                         </template>
                                         <v-list>
                                             <v-list-item>
+                                                <router-link to="/DutyFree">
                                                 <v-list-item-title>Duty Free</v-list-item-title>
+                                            </router-link>
                                             </v-list-item>
                                             <v-list-item>
                                                 <v-list-item-title>menu1</v-list-item-title>
