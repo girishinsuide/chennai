@@ -129,7 +129,9 @@
                                             </router-link>
                                             </v-list-item>
                                             <v-list-item>
-                                                <v-list-item-title>menu1</v-list-item-title>
+                                                <router-link to="/foodanddrink">
+                                                <v-list-item-title>Shop</v-list-item-title>
+                                                </router-link>
                                             </v-list-item>
                                             <v-list-item>
                                                 <v-list-item-title>menu1</v-list-item-title>

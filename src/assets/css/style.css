@@ -216,6 +216,7 @@ body,
     opacity: 0.5;
 }
 
-.v-dialog.FandD-dialogBox {
-    overflow: scroll;
+.v-dialog {
+    overflow: hidden !important;
+    box-shadow: none !important;
 }
