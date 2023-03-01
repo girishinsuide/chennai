@@ -10,7 +10,7 @@
             <span class="mr-4 ml-2">IST 3.20 PM</span>
         </v-app-bar>
         <v-toolbar dense height="110px">
-            <v-toolbar-title>
+            <v-toolbar-title class='logo-shape'>
                 <router-link to="/">
                     <v-img :src="require('../assets/logo.svg')" class="my-3" contain height="200" />
                 </router-link>
@@ -241,5 +241,9 @@ a {
 }
 
 .v-menu__content{box-shadow: none};
-.v-list-item--link:before{background-color: none !important}
+.v-list-item--link::before{background-color: none !important}
+
+
+ 
+
 </style>

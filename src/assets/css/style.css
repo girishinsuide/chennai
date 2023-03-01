@@ -215,3 +215,7 @@ body,
 .foodanddrinkcarousel.v-carousel .v-carousel__controls__item .v-icon {
     opacity: 0.5;
 }
+
+.v-dialog.FandD-dialogBox {
+    overflow: scroll;
+}
