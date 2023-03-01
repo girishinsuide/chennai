@@ -372,6 +372,7 @@ letter-spacing: -0.02em;
 color: #374151;
 }
 
+.carouselText .v-card__actions { padding: 0;}
 
 
 </style>
