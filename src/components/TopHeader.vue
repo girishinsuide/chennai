@@ -40,7 +40,7 @@
                                 </v-btn>
                             </template>
                             <v-card class="overflow-hidden top-menu">
-                                <v-row align="center" justify="center">
+                                <v-row align="center" justify="center" class="">
                                     <v-col class="text-center">
                                         <h2>Flights</h2>
                                     </v-col>
@@ -270,19 +270,17 @@ a {
     font-size: 18px;
 }
 
-.right-menu .v-navigation-drawer--temporary{z-index: 10}
-
 .v-list-item--link::before {
     background-color: none !important
 }
 
 .firstHeader {
     position: relative;
-    z-index: 10;
+    z-index: 2;
 }
 
 .secondHeader {
-    z-index: 9;
+    z-index: 1;
 
 }
 
@@ -296,7 +294,7 @@ a {
     width: 15%;
 }
 
-.logo-shape:before {
+/*.logo-shape:before {
     position: absolute;
     bottom: -25%;
     left: -9%;
@@ -307,5 +305,5 @@ a {
     border-radius: 0 0 0 30%;
     background-color: #fff;
     box-shadow: 0px 25px 50px -12px rgba(16, 24, 40, 0.2)
-}
+}*/
 </style>
