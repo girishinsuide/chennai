@@ -17,7 +17,7 @@
                     <v-list-item >
                         <v-list-item-content>
                             <div class="">
-                                <v-text-field class="mt-0 pt-2"  label="Sby City / Flight no.earch" hide-details prepend-icon="mdi-magnify" two-line></v-text-field>
+                                <v-text-field class="mt-0 pt-2"  label="Search by City / Flight no." hide-details prepend-icon="mdi-magnify" two-line></v-text-field>
                             </div>
                             <!-- <v-list-item-subtitle>by City / Flight no.</v-list-item-subtitle> -->
                         </v-list-item-content>
@@ -555,9 +555,11 @@
                         </div>
                     </v-card-text>
                     <v-card-actions>
+                        <router-link to="/charmingChennai">
                         <v-btn rounded dark class="gradient-button " style="padding:10px 20px !important">
                             Let’s Go
                         </v-btn>
+                    </router-link>
                     </v-card-actions>
                 </v-card>
             </v-col>

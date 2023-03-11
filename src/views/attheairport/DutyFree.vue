@@ -6,7 +6,7 @@
                 at the airport
             </v-card-title>
             <v-card-subtitle class="text-center mt-2">
-                <h1>How can we help?</h1>
+                <h1>Duty Free</h1>
             </v-card-subtitle>
             <v-container class="bg-surface-variant mt-10">
                 <v-row no-gutters class="atdariport">

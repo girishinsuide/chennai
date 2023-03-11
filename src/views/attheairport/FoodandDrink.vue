@@ -1,7 +1,7 @@
 <template>
     <div class="">
         <v-card class="mx-auto mt-n3" >
-            <v-img :src="require('../../views/attheairport/images/dutyfreebanner.jpg')" class="my-3" contain />
+            <v-img :src="require('../../views/attheairport/images/foodDrink.jpg')" class="my-3" contain />
             <v-card-title class="justify-center text-uppercase page-title mt-10">
                  at the airport
             </v-card-title>

@@ -45,7 +45,20 @@ const routes = [{
         name: 'foodanddrink',
         component: () =>
             import ('../views/attheairport/FoodandDrink.vue')
-    }
+    },
+    {
+        path: '/charmingChennai',
+        name: 'charmingChennai',
+        component: () =>
+            import ('../views/flights/charmingChennai.vue')
+    },
+    {
+        path: '/services',
+        name: 'airportServices',
+        component: () =>
+            import ('../views/services/airportServices.vue')
+    },
+
 ]
 
 const router = new VueRouter({

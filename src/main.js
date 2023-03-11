@@ -4,6 +4,9 @@ import router from './router'
 import vuetify from './plugins/vuetify'
 import ScrollAnimation from './directives/scrollanimation'
 import './assets/css/style.css'
+import './assets/css/slick.css'
+import './assets/css/slick-theme.css'
+
 
 Vue.directive('scrollanimation', ScrollAnimation);
 

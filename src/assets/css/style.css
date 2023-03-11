@@ -183,6 +183,7 @@
     font-weight: normal;
     src: local('DM Sans Bold Italic'), url('fonts/DMSans-BoldItalic.woff') format('woff');
 }
+@import 'slick-carousel/slick/slick.css';
 
 body,
 .v-application {
@@ -220,3 +221,4 @@ body,
     overflow: hidden !important;
     box-shadow: none !important;
 }
+a{text-decoration: none;}

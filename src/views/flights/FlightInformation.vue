@@ -1,7 +1,7 @@
 <template>
     <div class="">
         <v-card class="mx-auto mt-n3">
-            <v-img :src="require('../../views/services/images/lostnfound.jpg')" class="my-3" contain />
+            <v-img :src="require('../../views/flights/images/flightInfo.jpg')" class="my-3" contain />
             <v-card-title class="justify-center text-uppercase page-title">
                 Flight Information
             </v-card-title>
@@ -56,7 +56,7 @@
                         </v-btn>
                     </v-toolbar>
                 </div>
-                <v-data-table :headers="headers" :items="flightlist" :search="search" class="mytable">
+                <v-data-table :headers="headers" :items="flightlist" :search="search" class="mytable" >
                     <template v-slot:[`item.img`]="{ item }">
                         <img :src="item.img" class="mt-1" width="50" />
                     </template>

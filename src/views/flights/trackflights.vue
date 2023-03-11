@@ -1,7 +1,7 @@
 <template>
     <div class="home">
         <v-card class="mx-auto mt-n3" flat>
-            <v-img :src="require('../../views/services/images/lostnfound.jpg')" class="my-3" contain />
+            <v-img :src="require('../../views/flights/images/trackflight.jpg')" class="my-3" contain />
             <v-container>
                 <v-list>
                     <v-list-item>

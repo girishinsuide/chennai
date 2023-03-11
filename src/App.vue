@@ -29,8 +29,20 @@ export default {
 </script>
 
 <style type="text/css">
+.overlay-image:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.2);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index:1
+}
+.image-border-radius{border-radius: 10%}
 button{text-transform: unset !important;}
 .page-title{color: #1B63F8; font-size: 16px;}
+.myslider{z-index: 0}
 .myslider .v-carousel__controls{bottom:10% !important;}
 .mytabs .v-item-group{margin-bottom: 30px;}
 .vertical-tab .v-tabs-bar{background:none !important;}
@@ -115,5 +127,41 @@ a.border-radiusafter.v-tab{ border-radius:0px  20px  20px 0px}
     transform: translateY(0px);
 }
 /*image over effect END*/
+.custom-slider .v-carousel__controls{ background: #E8EFFE !important; border-radius: 10px;  }
+.custom-slider .theme--dark.v-btn--active:hover::before, .custom-slider .theme--dark.v-btn--active::before{opacity: 0.9}
+.custom-slider .theme--dark.v-btn:hover::before{opacity: 1}
+.custom-slider .v-btn:before{opacity:0.4;}
+
+.slider {
+        width: 50%;
+        margin: 100px auto;
+    }
+
+    .slick-slide {
+      margin: 0px 5px;
+    }
+
+    .slick-slide img {
+      width: 100%;
+    }
+
+    .slick-prev:before,
+    .slick-next:before {
+      color: black;
+    }
+
+
+    .slick-slide {
+      transition: all ease-in-out .3s;
+      opacity: .2;
+    }
+    
+    .slick-active {
+      opacity: .5;
+    }
+
+    .slick-current {
+      opacity: 1;
+    }
 
 </style>
