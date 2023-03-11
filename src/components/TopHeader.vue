@@ -23,14 +23,14 @@
                     </router-link>
                 </v-toolbar-title>
                 <v-spacer></v-spacer>
-                <v-toolbar-items >
+                <v-toolbar-items :class="myclass">
                     <!-- <router-link to="/about">
                     <v-btn text plain>
                         Flights
                     </v-btn>
                 </router-link> -->
                     <div >
-                        <v-menu offset-y :nudge-width="1500" class="">
+                        <v-menu offset-y :nudge-width="1500">
                             <template v-slot:activator="{ on, attrs }">
                                 <v-btn text plain v-bind="attrs" v-on="on">
                                     Flights
@@ -258,10 +258,11 @@ a {
     left: 0;
     max-width: 100% !important;
 }
-
+.top-menu > .v-menu__content{z-index: 0 !important}
 .v-menu__content {
-    box-shadow: none; z-index: 0 !important;
+    box-shadow: none; 
 }
+.top-menu-drop .v-menu__content{z-index: 0}
 
 .right-menu .v-list-item .v-list-item__title {
     padding: 12px 0;
@@ -269,17 +270,19 @@ a {
     font-size: 18px;
 }
 
+.right-menu .v-navigation-drawer--temporary{z-index: 10}
+
 .v-list-item--link::before {
     background-color: none !important
 }
 
 .firstHeader {
     position: relative;
-    z-index: 2;
+    z-index: 10;
 }
 
 .secondHeader {
-    z-index: 1;
+    z-index: 9;
 
 }
 
