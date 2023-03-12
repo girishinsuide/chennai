@@ -56,7 +56,7 @@
                         </v-btn>
                     </v-toolbar>
                 </div>
-                <v-data-table :headers="headers" :items="flightlist" :search="search" class="mytable" >
+                <v-data-table @click:row="rowClick" :headers="headers" :items="flightlist" :search="search" class="mytable" >
                     <template v-slot:[`item.img`]="{ item }">
                         <img :src="item.img" class="mt-1" width="50" />
                     </template>
@@ -234,6 +234,9 @@ export default {
             if (status == "Delayed") return 'red'
             else return 'green'
         },
+    rowClick() {
+      this.$router.push("trackflights/")
+    },
     },
 }
 </script>

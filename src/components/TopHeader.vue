@@ -23,7 +23,7 @@
                     </router-link>
                 </v-toolbar-title>
                 <v-spacer></v-spacer>
-                <v-toolbar-items :class="myclass">
+                <v-toolbar-items >
                     <!-- <router-link to="/about">
                     <v-btn text plain>
                         Flights
@@ -45,7 +45,7 @@
                                         <h2>Flights</h2>
                                     </v-col>
                                     <v-col>
-                                        <v-list>
+                                        <v-list class="submenu-padding">
                                             <v-list-item>
                                                 <v-list-item-title>
                                                     <router-link to="/flightinformation">
@@ -142,7 +142,7 @@
                                             </v-list-item>
                                             <v-list-item>
                                                 <router-link to="/foodanddrink">
-                                                    <v-list-item-title>Shop</v-list-item-title>
+                                                    <v-list-item-title>Food & Drink</v-list-item-title>
                                                 </router-link>
                                             </v-list-item>
                                             <v-list-item>
@@ -252,7 +252,7 @@ li {
 a {
     color: #42b983;
 }
-.top-menu .v-btn.v-size--default{font-size: 16px !important;}
+.top-menu .v-btn.v-size--default{font-size: 16px !important; padding:10px;}
 .top-menu .v-menu__content.theme--light.menuable__content__active {
     width: 100% !important;
     left: 0;

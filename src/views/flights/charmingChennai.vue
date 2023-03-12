@@ -1,7 +1,7 @@
 <template>
     <div class="">
         <v-card class="mx-auto mt-n3">
-            <v-img :src="require('../../views/services/images/lostnfound.jpg')" class="my-3" contain />
+            <!-- <v-img :src="require('../../views/services/images/lostnfound.jpg')" class="my-3" contain /> -->
             <v-card-title class="justify-center text-uppercase page-title">
                 plan your trip
             </v-card-title>
